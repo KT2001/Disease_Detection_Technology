@@ -6,7 +6,7 @@ import pathlib
 import itertools      
 
 # import data handling tools
-import cv2
+
 import numpy as np
 import pandas as pd
 import seaborn as sns
