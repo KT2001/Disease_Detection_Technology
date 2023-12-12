@@ -36,8 +36,8 @@ from PIL import Image, ImageOps
 st.set_option('deprecation.showfileUploaderEncoding', False)
 #@st.cache(allow_output_mutation=True)
 def load_model():
-  model = tf.keras.models.load_model('/content/drive/MyDrive/DDT/Models/ResNet50/resnet50-Disease-93.25.h5')
-  model.load_weights('/content/drive/MyDrive/DDT/Models/ResNet50/resnet50-Disease-weights.h5')
+  model = tf.keras.models.load_model('resnet50-Disease-93.25.h5')
+  model.load_weights('resnet50-Disease-weights.h5')
   model.summary()
   return model
 def image_loader(file):
