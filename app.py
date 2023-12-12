@@ -36,8 +36,8 @@ from PIL import Image, ImageOps
 st.set_option('deprecation.showfileUploaderEncoding', False)
 #@st.cache(allow_output_mutation=True)
 def load_model():
-  model = tf.keras.models.load_model('/content/drive/MyDrive/DDT/Models/ResNet50/resnet50-Disease-93.25.h5')
-  model.load_weights('/content/drive/MyDrive/DDT/Models/ResNet50/resnet50-Disease-weights.h5')
+  model = tf.keras.models.load_model('/content/drive/MyDrive/DDT/Models/ResNetRS-101/resnet-rs-101-ResNet101-1-95.09.h5')
+  model.load_weights('/content/drive/MyDrive/DDT/Models/ResNetRS-101/resnet-rs-101-ResNet101-1-weights.h5')
   model.summary()
   return model
 def image_loader(file):
@@ -66,7 +66,7 @@ def main():
     img = image_loader(file)
     model = load_model()
     pred = load_and_predict(img, model)
-    class_names = ['COVID', 'Lung_Opacity', 'Normal', 'Viral Pneumonia']
+    class_names = ['COVID', 'Lung_Opacity', 'Normal']
     st.write("Your image is of disease")
     st.success(class_names[np.argmax(pred)])
   else:
